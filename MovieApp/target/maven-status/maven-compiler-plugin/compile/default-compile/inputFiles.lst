@@ -1,0 +1,13 @@
+/home/cgi/Documents/Microservices/MovieApp/src/main/java/com/stackroute/MovieApp/MovieAppApplication.java
+/home/cgi/Documents/Microservices/MovieApp/src/main/java/com/stackroute/MovieApp/controller/MovieController.java
+/home/cgi/Documents/Microservices/MovieApp/src/main/java/com/stackroute/MovieApp/service/MovieService.java
+/home/cgi/Documents/Microservices/MovieApp/src/main/java/com/stackroute/MovieApp/exception/MovieNotFoundException.java
+/home/cgi/Documents/Microservices/MovieApp/src/main/java/com/stackroute/MovieApp/config/WebConfiguration.java
+/home/cgi/Documents/Microservices/MovieApp/src/main/java/com/stackroute/MovieApp/controller/MovieResponseEntityExceptionHandler.java
+/home/cgi/Documents/Microservices/MovieApp/src/main/java/com/stackroute/MovieApp/config/SwaggerConfiguration.java
+/home/cgi/Documents/Microservices/MovieApp/src/main/java/com/stackroute/MovieApp/startup/MovieAppStartup.java
+/home/cgi/Documents/Microservices/MovieApp/src/main/java/com/stackroute/MovieApp/service/MovieServiceImpl.java
+/home/cgi/Documents/Microservices/MovieApp/src/main/java/com/stackroute/MovieApp/repository/MovieRepository.java
+/home/cgi/Documents/Microservices/MovieApp/src/main/java/com/stackroute/MovieApp/domain/Movie.java
+/home/cgi/Documents/Microservices/MovieApp/src/main/java/com/stackroute/MovieApp/exception/MovieAlreadyExistsException.java
+/home/cgi/Documents/Microservices/MovieApp/src/main/java/com/stackroute/MovieApp/service/MovieDummyServiceImpl.java

@@ -1,0 +1,62 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql-docker
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: userDB
+    volumes:
+      - $HOME/var/lib:/var/lib/mysql
+  mongo:
+    image: mongo:3.4-xenial
+    container_name: mongo
+    volumes:
+      - $HOME/data/db:/data/db
+  movie:
+    build: MovieApp/
+    container_name: movie-app2
+    depends_on:
+      - mongo
+      - spring-eureka
+      - spring-config-server
+    links:
+      - mongo
+      - spring-eureka
+      - spring-config-server
+  spring-user:
+    build: userservice/
+    container_name: user-app
+    depends_on:
+      - mysql
+      - spring-eureka
+      - spring-config-server
+    links:
+      - mysql
+      - spring-eureka
+      - spring-config-server
+  spring-api-gateway:
+    build: api-gateway/
+    restart: always
+    depends_on:
+      - spring-user
+      - movie
+    links:
+      - spring-user
+      - movie
+    container_name: zuul-app
+    ports:
+      - "8080:8080"
+  spring-eureka:
+    build: spring-eureka-server/
+    container_name: eureka1
+    ports:
+      - "8761:8761"
+  spring-config-server:
+    build: config-server/
+    restart: always
+    links:
+      - spring-eureka
+    depends_on:
+      - spring-eureka
+    container_name: config-server
